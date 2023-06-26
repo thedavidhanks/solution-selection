@@ -1,4 +1,4 @@
-import  {storageData} from './data.js';
+import  { storageData } from './data.js';
 
 // Generates a table to compare attributes of two or more solutions.
 //      newRowData - Array of objects
@@ -101,7 +101,7 @@ $(document).ready( function () {
                 controls: false,
                 
             },
-            dom: '<"dtsp-dataTable"frtip>',
+            dom: '<"dtsp-dataTable"frtip>', // vertically stacked on left '<"dtsp-dataTable"frtip>'
             pageLength: 20
         }
     )
