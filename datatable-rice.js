@@ -1,5 +1,7 @@
 import  {storageData} from './data.js';
 
+// Generates a table to compare attributes of two or more solutions.
+//      newRowData - Array of objects
 const createCompareTable = (newRowData) => {
     const compareHeaderRow = $('#comparison-container thead tr');
     const compareDescRow = $('tbody #compare-desc');
@@ -105,10 +107,10 @@ $(document).ready( function () {
     )
     .on('select', function (e, dt, type, indexes) {
         let newRowData = table.rows({selected: true}).data().toArray()
-        //var rowData = table.rows(indexes).data().toArray()
 
-        $('#row-data').html(JSON.stringify(newRowData))
+        $('#raw-data').html(JSON.stringify(newRowData))
         .addClass("alert alert-secondary")
+        $('#raw-data-container').removeClass('hidden');
         $('#selected-name').html(newRowData[0].Service);
         $('#selected-description').html(newRowData[0].Description);
 
@@ -140,7 +142,8 @@ $(document).ready( function () {
         }else{ //none selected
             $('#selected-container').addClass('hidden');
             $('#comparison-container').addClass('hidden');
-            $('#row-data').html('')
+            $('#raw-data-container').addClass('hidden');
+            $('#raw-data').html('')
             .removeClass("alert alert-secondary")
             $('#selected-name').html('');
             $('#selected-description').html('');
