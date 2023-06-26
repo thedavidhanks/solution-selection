@@ -1,0 +1,99 @@
+.hidden {
+    display: none;
+}
+.cards tbody tr {
+    float: left;
+    margin: 5px;
+    border: 1px solid;
+}
+.cards tbody td {
+    display: block;
+}
+.table .fa {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.cards .fa {
+    font-size: 7.5rem;
+}
+tr.selected label {
+    color: #404040;
+}
+.table tbody label {
+    display: none;
+}
+.cards tbody label {
+    display: inline;
+    position: relative;
+    font-size: 85%;
+    top: -0.5rem;
+    float: left;
+    color: #808080;
+    min-width: 4rem;
+    margin-left: 0;
+    margin-right: 1rem;
+    text-align: left;
+}
+div.dtsp-verticalContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+ 
+div.dtsp-verticalContainer div.dtsp-verticalPanes,
+div.dtsp-verticalContainer div.container{
+    width: 30%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+ 
+div.dtsp-verticalContainer div.dtsp-verticalPanes{
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 26%;
+}
+ 
+div.dtsp-verticalPanes {
+    margin-right: 20px;
+}
+ 
+div.dtsp-title {
+    margin-right: 0px !important;
+    margin-top: 13px !important;
+}
+
+div.dtsp-titleRow {
+    display: none;
+}
+ 
+input.dtsp-search {
+    min-width: 0px !important;
+    padding-left: 0px !important;
+    margin: 0px !important;
+}
+ 
+div.dtsp-verticalContainer div.dtsp-verticalPanes div.dtsp-searchPanes{
+    flex-direction: column;
+    flex-basis: 0px;
+}
+ 
+div.dtsp-verticalContainer div.dtsp-verticalPanes div.dtsp-searchPanes div.dtsp-searchPane{
+    flex-basis: 0px;
+}
+ 
+div.dtsp-verticalContainer div.container{
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 60%;
+}
+ 
+div.dtsp-panesContainer {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 5px;
+}
