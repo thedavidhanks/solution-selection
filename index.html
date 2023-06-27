@@ -16,7 +16,7 @@
     <body>
         <h1 style="text-align: center">Data Storage Options</h1>
         <button type="button" class="btn btn-outline-primary m-3" id="card-toggler">toggle cards</button>
-        <div class="dtsp-verticalContainer">
+        <!-- <div class="dtsp-verticalContainer">
             <div class="dtsp-verticalPanes"></div>
 
             <div class="container container-fluid">
@@ -30,7 +30,17 @@
                     </thead>
                 </table>
             </div>
-        </div>
+        </div> -->
+        <table id="myTable" class="display nowrap cards table-sm table-hover dataTable w-100">
+            <thead  style="display: none;" >
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                </tr>
+            </thead>
+        </table>
+
         <div id="selected-container" class="m-3">
             <div id="selected-name" class="fs-2"></div>
             <div id="selected-description"></div>

@@ -81,7 +81,6 @@ $(document).ready( function () {
                 },*/
             ],
             searchPanes: {
-                scrollY: "150px",
                 cascadePanes: true,
                 layout: 'columns-1',
                 panes: [
@@ -137,7 +136,7 @@ $(document).ready( function () {
                 controls: false,
                 
             },
-            dom: '<"dtsp-dataTable"rtp>', // vertically stacked on left '<"dtsp-dataTable"frtip>' Ref https://datatables.net/reference/option/dom
+            dom: '<"container"<"row"<"col-12 col-md-3"P><"col-12 col-md-9"rtp>>>',
             pageLength: 20
         }
     )
@@ -188,7 +187,7 @@ $(document).ready( function () {
     })
     
     table.searchPanes()
-    $("div.dtsp-verticalPanes").append(table.searchPanes.container());                
+    // $("div.dtsp-verticalPanes").append(table.searchPanes.container());                
     
     //Switch between table and cards
     $("#card-toggler").click(()=>{
