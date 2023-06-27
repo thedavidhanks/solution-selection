@@ -5,23 +5,43 @@ import  { storageData } from './data.js';
 const createCompareTable = (newRowData) => {
     const compareHeaderRow = $('#comparison-container thead tr');
     const compareDescRow = $('tbody #compare-desc');
+    const compareExampleRow = $('tbody #compare-example');
+    const compareCostRow = $('tbody #compare-cost');
     const compareCapacityRow = $('tbody #compare-capacity');
+    const compareAccessRow = $('tbody #compare-access');
+    const compareDataRow = $('tbody #compare-data');
+    const compareDurabilityRow = $('tbody #compare-dura');
     
     //reset table
     compareHeaderRow.empty();
     compareDescRow.empty();
+    compareExampleRow.empty();
+    compareCostRow.empty();
     compareCapacityRow.empty();
+    compareAccessRow.empty();
+    compareDataRow.empty();
+    compareDurabilityRow.empty();
     $("<th>Service</th>").appendTo(compareHeaderRow);
     $("<th>Description</th>").appendTo(compareDescRow);
+    $("<th>Example</th>").appendTo(compareExampleRow);
+    $("<th>Cost</th>").appendTo(compareCostRow);
     $("<th>Capacity</th>").appendTo(compareCapacityRow);
+    $("<th>Access and Collaboration</th>").appendTo(compareAccessRow);
+    $("<th>Data Allowed</th>").appendTo(compareDataRow);
+    $("<th>Durability</th>").appendTo(compareDurabilityRow);
 
     //add new data
     newRowData.forEach(row =>{
-        //console.log('row data',row);
         let newHead = $("<th></th>").appendTo(compareHeaderRow);
         newHead.html(row['Service']);
+
         $("<td></td>").appendTo(compareDescRow).html(row['Description']);
+        $("<td></td>").appendTo(compareExampleRow).html(row['Example Use']);
+        $("<td></td>").appendTo(compareCostRow).html(row['Cost']);
         $("<td></td>").appendTo(compareCapacityRow).html(row['Capacity']);
+        $("<td></td>").appendTo(compareAccessRow).html(row['Access and Collaboration']);
+        $("<td></td>").appendTo(compareDataRow).html(row['Data Allowed']);
+        $("<td></td>").appendTo(compareDurabilityRow).html(row['Durability']);
     })
 }
 
@@ -61,8 +81,8 @@ $(document).ready( function () {
                 },*/
             ],
             searchPanes: {
+                scrollY: "150px",
                 cascadePanes: true,
-                //orderable: false,
                 layout: 'columns-1',
                 panes: [
                     {
@@ -75,9 +95,13 @@ $(document).ready( function () {
                             {
                                 label: 'Working Data',
                                 value: (rowData, rowIndex) =>  rowData['Working Data'] === true
+                            },
+                            {
+                                label: 'Sharing/publication',
+                                value: (rowData, rowIndex) => rowData['Sharing/publication'] === true
                             }
                         ],
-                        combiner: 'and'
+                        combiner: 'and',
                     },
                     {
                         header: 'What is the UC protection level classification of your data?',
@@ -93,6 +117,18 @@ $(document).ready( function () {
                             {
                                 label: 'P3 - Human subject data',
                                 value: (rowData, rowIndex) =>  rowData['P3'] === true
+                            },
+                            {
+                                label: 'P3 - Export-controlled data',
+                                value: (rowData, rowIndex) =>  rowData['P3 - Export-controlled data'] === true
+                            },
+                            {
+                                label: 'P4 - Clinical (health) data',
+                                value: (rowData, rowIndex) =>  rowData['P4'] === true
+                            },
+                            {
+                                label: 'Other P3/P4 (restricted data)',
+                                value: (rowData, rowIndex) =>  rowData['Other'] === true
                             }
                         ],
                         combiner: 'and'
@@ -101,7 +137,7 @@ $(document).ready( function () {
                 controls: false,
                 
             },
-            dom: '<"dtsp-dataTable"frtip>', // vertically stacked on left '<"dtsp-dataTable"frtip>'
+            dom: '<"dtsp-dataTable"rtp>', // vertically stacked on left '<"dtsp-dataTable"frtip>' Ref https://datatables.net/reference/option/dom
             pageLength: 20
         }
     )

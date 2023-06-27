@@ -1,11 +1,13 @@
 .hidden {
     display: none;
 }
+
 .cards tbody tr {
     float: left;
     margin: 5px;
     border: 1px solid;
 }
+
 .cards tbody td {
     display: block;
     width: 120px;
@@ -24,17 +26,6 @@
     font-size: 7.5rem;
 }
 
-.table .fa {
-    font-size: 2.5rem;
-    text-align: center;
-}
-
-tr.selected label {
-    color: #404040;
-}
-.table tbody label {
-    display: none;
-}
 .cards tbody label {
     display: inline;
     position: relative;
@@ -47,6 +38,25 @@ tr.selected label {
     margin-right: 1rem;
     text-align: left;
 }
+
+.table .fa {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.table tbody label {
+    display: none;
+}
+
+tr.selected label {
+    color: #404040;
+}
+
+div.dtsp-searchPane div.dataTables_scrollBody {
+    height: auto !important;
+    max-height: 200px !important;
+}
+
 div.dtsp-verticalContainer{
     display: flex;
     flex-direction: row;
@@ -55,7 +65,7 @@ div.dtsp-verticalContainer{
     align-content: flex-start;
     align-items: flex-start;
 }
- 
+
 div.dtsp-verticalContainer div.dtsp-verticalPanes,
 div.dtsp-verticalContainer div.container{
     width: 30%;
